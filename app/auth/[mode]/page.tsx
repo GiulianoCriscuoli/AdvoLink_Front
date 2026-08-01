@@ -1,10 +1,11 @@
 "use client";
 
-import { login } from "@/api/auth/authApi";
+import { login, register, type LoginPayload, type RegisterPayload } from "@/api/auth/authApi";
 import { useState } from "react";
 import  AuthForm from "./components/AuthForm";
 import  AuthCarousel  from "./components/carousel";
 import { useParams } from "next/navigation";
+
 import "@/css/auth.css";
 
 
@@ -15,31 +16,51 @@ export default function AuthPage() {
     const mode = params.mode as "login" | "registrar";
 
     async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
-    e.preventDefault();
+      e.preventDefault();
 
-    try {
-      setLoading(true);
+      try {
+        setLoading(true);
+        setError("");
 
-      const { email, password } = Object.fromEntries(
-        new FormData(e.currentTarget)
-      ) as {
-        email: string;
-        password: string;
-      };
+        const data = Object.fromEntries(new FormData(e.currentTarget));
 
-      const data = await login(email, password);
+        const result = mode == "login" ? 
+            await login(data as LoginPayload) 
+          : await register(data as RegisterPayload);
 
-      console.log(data);
+          console.log(result);
+        
+      } catch (error) {
+        setError(
+          "Erro:" + error
+        );
+      } finally {
+        setLoading(false);
+      }
 
-      // Exemplo:
-      // window.location.href = "/dashboard";
+      // try {
+      //   setLoading(true);
 
-    } catch (error) {
-      setError("Erro ao fazer login. Email ou senha inválidos.");
-    } finally {
-      setLoading(false);
+      //   const data = Object.fromEntries(new FormData(e.currentTarget))
+      //   const result = mode === "login" 
+      //     ? await login(data as LoginPayload) 
+      //     : await register(data as RegisterPayload);
+
+      //     console.log(result);
+
+      //   } catch (error) {
+      //     setError(
+      //       mode === "login"
+      //         ? "Erro ao fazer login. Email ou senha inválidos."
+      //         : "Erro ao criar conta. Verifique os dados informados."
+      //       );
+
+      //       console.error(error);
+
+      //   } finally {
+      //     setLoading(false);
+      //   }
     }
-  }
 
     return (
       <div
@@ -136,9 +157,7 @@ export default function AuthPage() {
               onSubmit={handleSubmit}
             />
           </div>
-
         </div>
-
       </div>
   );
 }

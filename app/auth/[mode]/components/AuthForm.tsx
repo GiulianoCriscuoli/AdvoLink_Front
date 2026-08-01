@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-
 interface AuthFormProps {
   mode: "login" | "registrar";
   error?: string;
@@ -15,7 +14,7 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
   return (
     <div className="login-form-area w-full h-full bg-gray-900 px-8 py-8 sm:px-8 lg:px-10">
         <h2 className="text-white text-sm mt-4">
-          {isRegister ? "Crie sua conta" : "Bem-vindo de volta!"}
+          {isRegister ? null : "Bem-vindo de volta!"}
         </h2>
 
         <form className="flex flex-col" id="login-form" onSubmit={onSubmit}>
@@ -27,12 +26,12 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
 
           {isRegister && (
             <div>
-              <label htmlFor="usuario" className="block text-sm text-white mb-1.5">Registre Link na Bio gratuitamente</label>
+              <label htmlFor="username" className="block text-base font-bold text-[#22d3ee] mb-1.5">REGISTRE SEU LINK NAS REDES SOCIAIS GRATUITAMENTE!</label>
               <input
                 type="text"
-                id="usuario"
-                name="usuario"
-                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border border-white/10 text-white placeholder-white focus:outline-none transition-colors"
+                id="username"
+                name="username"
+                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border border-[#0e7490] text-white placeholder-white focus:outline-none transition-colors"
               />
             </div>
           )}
@@ -43,7 +42,7 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
               type="email"
               id="email"
               name="email"
-              className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border border-white/10 text-white placeholder-white focus:outline-none transition-colors"
+              className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border/10 text-white placeholder-white focus:outline-none transition-colors"
             />
           </div>
 
@@ -62,19 +61,19 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
                 id="password"
                 name="password"
                 placeholder="••••••••"
-                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border border-white/10 text-white placeholder-gray-600 focus:outline-none transition-colors"
+                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border/10 text-white placeholder-gray-600 focus:outline-none transition-colors"
               />
           </div>
 
           {isRegister && (
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm text-white mb-1.5 mt-4">Confirmar Senha</label>   
+              <label htmlFor="password_confirmation" className="block text-sm text-white mb-1.5 mt-4">Confirmar Senha</label>   
               <input
                 type="password" 
-                id="confirmPassword"
-                name="confirmPassword"
+                id="password_confirmation"
+                name="password_confirmation"
                 placeholder="••••••••"  
-                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border border-white/10 text-white placeholder-gray-600 focus:outline-none transition-colors"
+                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border/10 text-white placeholder-gray-600 focus:outline-none transition-colors"
               />
             </div>
           )}
@@ -82,20 +81,24 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 rounded-lg bg-white text-gray-950 font-semibold text-sm hover:opacity-90 transition-opacity mt-4">
+            className={`w-full py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity mt-4 ${
+              isRegister
+                ? "bg-[#1699ad] text-white"
+                : "bg-white text-gray-950"
+            }`}>
             {isRegister ? "Criar conta" : "Entrar"}
           </button>
 
           {loading && (
             <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-              <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin" />
             </div>
           )}
         </form>
 
         <button
         onClick={() => window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/auth/google`}
-        className="w-full flex items-center justify-center gap-3 py-2.5 mt-4 rounded-lg border border-white/10 bg-gray-800 text-white text-sm font-medium hover:bg-gray-700 transition-colors"
+        className="w-full flex items-center justify-center gap-3 py-2.5 mt-4 rounded-lg bg-gray-800 text-white text-sm font-medium hover:bg-gray-700 transition-colors"
       >
       <svg className="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>

@@ -10,7 +10,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-export default function authCarousel() {
+export default function AuthCarousel() {
   const plugin = React.useRef(
     Autoplay({
       delay: 4000,
@@ -26,12 +26,12 @@ export default function authCarousel() {
     {
       title: "Gerencie seus links",
       description: "Centralize todos os seus links em um único lugar.",
-      image: "/slides/teste.png",
+      image: "/slides/slide02.jpg",
     },
     {
       title: "Analytics",
       description: "Acompanhe cliques e métricas em tempo real.",
-      image: "/slides/wolverine.png",
+      image: "/slides/slide03.jpg",
     },
   ];
 
