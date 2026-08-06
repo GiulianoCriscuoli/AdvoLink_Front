@@ -8,7 +8,6 @@ import { useParams } from "next/navigation";
 
 import "@/css/auth.css";
 
-
 export default function AuthPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");

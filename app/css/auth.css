@@ -38,7 +38,6 @@
 }
 
 @media (max-width: 768px) {
-
     .login-form-area {
         max-width: 100%;
         min-height: auto;
@@ -61,7 +60,6 @@
 }
 
 @media (max-width: 480px) {
-
     .login-form-area {
         padding: 1.25rem;
     }

@@ -7,7 +7,6 @@ interface AuthFormProps {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-
 export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormProps) {
   const isRegister = mode === "registrar";
 
@@ -22,6 +21,7 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
           <div className="text-red-400 text-sm mt-2">
             {error}
           </div> 
+          
           )}
 
           {isRegister && (
@@ -31,7 +31,7 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
                 type="text"
                 id="username"
                 name="username"
-                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border border-[#0e7490] text-white placeholder-white focus:outline-none transition-colors"
+                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border-2 border-[#0e7490] text-white placeholder-white focus:outline-none transition-colors"
               />
             </div>
           )}
