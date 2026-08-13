@@ -1,20 +1,24 @@
-
 .menu-options a {
     color: var(--cta-primary);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 
+}
+
+.logo {
+    color: var(--cta-primary);
+    font-size: 2rem;
 }
 
 .hero {
-    height: 90vh;
-    margin-top: 3rem;
+    height: 70%;
+    margin-top: 3.5rem;
 }
 
 .hero .hero-content {
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .hero .hero-description h1 {
@@ -24,7 +28,7 @@
 }
 
 .hero .hero-description p {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     margin-bottom: 1.5rem;
     max-width: 500px;
 }
@@ -43,6 +47,7 @@
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    font-size: 1.2rem;
 }
 
 .login-button {
@@ -55,6 +60,17 @@
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+section h2#como-funciona-title  {
+    font-size: 2.8rem;
+    color: var(--cta-primary);
+}
+
+section#como-funciona h3 {
+    font-size: 1.6rem;
+    color: var(--cta-primary);
 }
 
 /* .contrast{

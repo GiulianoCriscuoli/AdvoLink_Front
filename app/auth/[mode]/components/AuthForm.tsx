@@ -1,13 +1,16 @@
 import Link from "next/link";
 
-interface AuthFormProps {
-  mode: "login" | "registrar";
-  error?: string;
-  loading: boolean;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-}
+type AuthFormProps = {
+    mode: "login" | "registrar";
+    error: string;
+    fieldErrors: Record<string, string>;
+    loading: boolean;
+    onSubmit: (
+        e: React.SyntheticEvent<HTMLFormElement>
+    ) => void;
+};
 
-export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormProps) {
+export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }: AuthFormProps) {
   const isRegister = mode === "registrar";
 
   return (
@@ -17,12 +20,6 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
         </h2>
 
         <form className="flex flex-col" id="login-form" onSubmit={onSubmit}>
-          {error && (
-          <div className="text-red-400 text-sm mt-2">
-            {error}
-          </div> 
-          
-          )}
 
           {isRegister && (
             <div>
@@ -44,6 +41,11 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
               name="email"
               className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border/10 text-white placeholder-white focus:outline-none transition-colors"
             />
+            {fieldErrors.email && (
+              <span className="mt-1 text-sm text-red-500">
+                  {fieldErrors.email}
+              </span>
+            )}
           </div>
 
           <div>
@@ -63,6 +65,12 @@ export default function AuthForm({ mode, error, loading, onSubmit }: AuthFormPro
                 placeholder="••••••••"
                 className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border/10 text-white placeholder-gray-600 focus:outline-none transition-colors"
               />
+
+              {fieldErrors.password && (
+                <span className="mt-1 text-sm text-red-500">
+                    {fieldErrors.password}
+                </span>
+              )}
           </div>
 
           {isRegister && (

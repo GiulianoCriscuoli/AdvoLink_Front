@@ -122,16 +122,50 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 1s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+button, 
+a {
+    cursor: pointer;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
     
   }
+  
   body {
     @apply bg-background text-foreground;
+    background-color: #f0f8ff;
   }
+
   html {
     @apply font-body;
+    scroll-behavior: smooth;
   }
 
   h2 {

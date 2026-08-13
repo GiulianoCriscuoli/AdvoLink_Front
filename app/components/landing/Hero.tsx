@@ -37,7 +37,7 @@ export default function Hero() {
 
     return (
         <section className="hero text-white">
-            <div className="container mx-auto">
+            <div className="mx-auto">
                 <div className="hero-content flex flex-col md:flex-row">
                     <div className="hero-description">
                         <div className="relative h-40 w-full max-w-xl overflow-hidden">
@@ -58,7 +58,7 @@ export default function Hero() {
                             </div>
                         <p className="text-lg md:text-xl mb-8">A plataforma que centraliza seus contatos, redes e páginas em um só link, com compliance garantido pelo Código de Ética da OAB.</p>
                         <div className="hero-cta space-x-4">
-                            <Link href="/auth/registrar" className="px-6 py-3 rounded-lg text-black text-sm font-semibold hover:opacity-90 transition-opacity">Comece Free</Link>
+                            <Link href="/auth/registrar" target="_blank" className="px-6 py-3 rounded-lg text-black text-sm font-semibold hover:opacity-90 transition-opacity">Comece Free</Link>
                         </div>
                     </div>
                     <div
