@@ -1,4 +1,7 @@
+import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import Loader from "@/components/loadings/loading";
 
 type AuthFormProps = {
     mode: "login" | "registrar";
@@ -12,12 +15,12 @@ type AuthFormProps = {
 
 export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }: AuthFormProps) {
   const isRegister = mode === "registrar";
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="login-form-area w-full h-full bg-gray-900 px-8 py-8 sm:px-8 lg:px-10">
-        <h2 className="text-white text-sm mt-4">
-          {isRegister ? null : "Bem-vindo de volta!"}
-        </h2>
+
+      {isRegister ? null : <h2 className="text-white text-sm mt-4">Bem-vindo de volta!</h2>}
 
         <form className="flex flex-col" id="login-form" onSubmit={onSubmit}>
 
@@ -30,6 +33,12 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
                 name="username"
                 className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border-2 border-[#0e7490] text-white placeholder-white focus:outline-none transition-colors"
               />
+
+              {fieldErrors.username && (
+              <span className="mt-1 text-sm text-red-500">
+                  {fieldErrors.username}
+              </span>
+            )}
             </div>
           )}
 
@@ -50,27 +59,47 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
 
           <div>
             <div className="flex justify-between mb-3 mt-4">
-              <label htmlFor="password" className="text-sm text-white">Senha</label>
+                <label htmlFor="password" className="text-sm text-white">Senha</label>
 
-              {!isRegister && (
-                <a href="#" className="text-xs text-white hover:text-white transition-colors">
-                  Esqueci a senha
-                </a>
-              )}
+                {!isRegister && (
+                  <a href="#" className="text-xs text-white hover:text-white transition-colors">
+                    Esqueci a senha
+                  </a>
+                )}
             </div>
-            <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="••••••••"
-                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border/10 text-white placeholder-gray-600 focus:outline-none transition-colors"
+
+            <div className="relative">
+              <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  placeholder="••••••••"
+                  className="w-full px-4 py-2.5 pr-11 rounded-lg bg-gray-800 border/10 text-white placeholder-gray-600 focus:outline-none transition-colors"
               />
 
-              {fieldErrors.password && (
-                <span className="mt-1 text-sm text-red-500">
+              <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  aria-label={
+                      showPassword
+                          ? "Ocultar senha"
+                          : "Mostrar senha"
+                  }
+              >
+                  {showPassword ? (
+                      <EyeOff size={18} />
+                  ) : (
+                      <Eye size={18} />
+                  )}
+              </button>
+            </div>
+
+            {fieldErrors.password && (
+                <span className="mt-1 block text-sm text-red-500">
                     {fieldErrors.password}
                 </span>
-              )}
+            )}
           </div>
 
           {isRegister && (
@@ -97,9 +126,9 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
             {isRegister ? "Criar conta" : "Entrar"}
           </button>
 
-          {loading && (
-            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-              <div className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin" />
+           {loading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+                <Loader />
             </div>
           )}
         </form>

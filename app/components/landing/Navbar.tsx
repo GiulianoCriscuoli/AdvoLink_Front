@@ -4,7 +4,7 @@ export function Navbar() {
   return (
     <nav className=" text-white py-8">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="nav-area flex justify-between items-center">
             <div className="logo flex text-xl font-bold">
               ADvo
               <div className="relative bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">

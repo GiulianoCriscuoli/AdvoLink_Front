@@ -128,6 +128,7 @@ export default function AuthPage() {
 
             <div
                 className="
+                    layer-area
                     relative
                     z-10
                     flex

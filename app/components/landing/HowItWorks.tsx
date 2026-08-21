@@ -27,7 +27,7 @@ export default function HowItWorks() {
       className="bg-background mt-20"
     >
       <div className="max-w-6xl container mx-auto flex flex-col items-center justify-center">
-        <div className="max-w-2xl">
+        <div className="w-[80%] max-w-2xl">
           <h2
             id="como-funciona-title"
             className="text-black text-5xl font-bold">
@@ -35,13 +35,15 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="path-area mt-16 grid gap-8 md:grid-cols-3">
             {steps.map((step) => (
                 <article key={step.number} className="group">
+
+                  <div className="paths">
                     <span className="text-6xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                         {step.number}
                     </span>
-
+                    
                     <div className="mt-6">
                         <h3 className="text-xl font-semibold">
                             {step.title}
@@ -51,6 +53,8 @@ export default function HowItWorks() {
                             {step.description}
                         </p>
                     </div>
+                  </div>
+                    
                 </article>
             ))}
         </div>
