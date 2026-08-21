@@ -4,7 +4,6 @@
     font-weight: 600;
     transition: color 0.3s ease;
     font-size: 1.5rem;
-
 }
 
 .logo {
@@ -81,6 +80,11 @@ section#como-funciona h3 {
   color: transparent;
 }  */
 
+
+footer {
+    background-color: var(--cta-primary);
+}
+
 @media (max-width: 768px) {
     .nav-area {
         flex-direction: column;
@@ -111,5 +115,9 @@ section#como-funciona h3 {
         display: flex;
         align-items: center;
         gap: 10px;
+    }
+
+    main {
+        padding: 0 1rem;
     }
 }
