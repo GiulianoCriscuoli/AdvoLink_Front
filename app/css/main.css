@@ -16,6 +16,13 @@
     margin-top: 3.5rem;
 }
 
+.bg-dots {
+    background-image: radial-gradient(#3e47aa22 1px, transparent 1px);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+}
+
 .hero .hero-content {
     justify-content: space-evenly;
 }
@@ -104,17 +111,6 @@ footer {
 
     section h2#como-funciona-title {
         font-size: 2.2rem;
-    }
-
-    .path-area {
-        grid-template-columns: 1fr;
-        margin-top: 1.25rem;
-    }
-
-    .paths {
-        display: flex;
-        align-items: center;
-        gap: 10px;
     }
 
     main {

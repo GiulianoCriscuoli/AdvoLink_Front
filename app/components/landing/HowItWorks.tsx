@@ -1,3 +1,5 @@
+import PhoneMockup from "./PhoneMockup";
+
 const steps = [
   {
     number: "01",
@@ -35,28 +37,35 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        <div className="path-area mt-16 grid gap-8 md:grid-cols-3">
-            {steps.map((step) => (
-                <article key={step.number} className="group">
+        <div className="mt-16 flex w-full flex-col items-center gap-12 md:flex-row md:justify-center md:gap-20">
+        <ol className="max-w-xl">
+            {steps.map((step, i) => (
+                <li key={step.number} className="group relative flex gap-6 pb-12 last:pb-0">
+                  {i < steps.length - 1 && (
+                    <span
+                      aria-hidden
+                      className="absolute left-12 top-20 bottom-3 -translate-x-1/2 border-l-2 border-dashed border-indigo-200"
+                    />
+                  )}
 
-                  <div className="paths">
-                    <span className="text-6xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
-                        {step.number}
-                    </span>
-                    
-                    <div className="mt-6">
-                        <h3 className="text-xl font-semibold">
-                            {step.title}
-                        </h3>
+                  <span className="w-24 shrink-0 text-center text-7xl leading-none bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+                    {step.number}
+                  </span>
 
-                        <p className="mt-3 max-w-sm leading-7 text-muted-foreground">
-                            {step.description}
-                        </p>
-                    </div>
+                  <div className="pt-1">
+                    <h3 className="text-xl font-semibold">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 max-w-sm leading-7 text-muted-foreground">
+                      {step.description}
+                    </p>
                   </div>
-                    
-                </article>
+                </li>
             ))}
+        </ol>
+          <div className="shrink-0">
+            <PhoneMockup />
+          </div>
         </div>
       </div>
     </section>

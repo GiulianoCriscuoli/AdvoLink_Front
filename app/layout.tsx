@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import "./globals.css";
 import "@/css/main.css";
@@ -9,9 +9,9 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-cormorant',
+  variable: '--font-playfair',
 })
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <SmoothScroll />

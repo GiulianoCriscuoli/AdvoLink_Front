@@ -26,12 +26,12 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
 
           {isRegister && (
             <div>
-              <label htmlFor="username" className="block text-base font-bold text-[#22d3ee] mb-1.5">REGISTRE SEU LINK NAS REDES SOCIAIS GRATUITAMENTE!</label>
+              <label htmlFor="username" className="block text-base font-bold bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent mb-1.5">REGISTRE SEU LINK NAS REDES SOCIAIS GRATUITAMENTE!</label>
               <input
                 type="text"
                 id="username"
                 name="username"
-                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border-2 border-[#0e7490] text-white placeholder-white focus:outline-none transition-colors"
+                className="w-full px-4 py-2.5 rounded-lg bg-gray-800 border-2 border-transparent [background:linear-gradient(#1f2937,#1f2937)_padding-box,linear-gradient(to_right,#22d3ee,#06b6d4,#0891b2)_border-box] text-white placeholder-white focus:outline-none transition-colors"
               />
 
               {fieldErrors.username && (
@@ -62,7 +62,7 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
                 <label htmlFor="password" className="text-sm text-white">Senha</label>
 
                 {!isRegister && (
-                  <a href="#" className="text-xs text-white hover:text-white transition-colors">
+                  <a href="#" className="text-xs font-semibold bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
                     Esqueci a senha
                   </a>
                 )}
@@ -118,11 +118,7 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity mt-4 ${
-              isRegister
-                ? "bg-[#1699ad] text-white"
-                : "bg-white text-gray-950"
-            }`}>
+            className="w-full py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity mt-4 bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 text-white">
             {isRegister ? "Criar conta" : "Entrar"}
           </button>
 
@@ -148,11 +144,11 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
 
       <p className="text-center flex flex-col text-xs text-gray-600 mt-6">
         {isRegister ? (
-          <Link href="/auth/login" className="text-white transition-colors">
+          <Link href="/auth/login" className="font-semibold bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             Já tem uma conta? Entre aqui
           </Link>
         ) : (
-          <Link href="/auth/registrar" className="text-white transition-colors">
+          <Link href="/auth/registrar" className="font-semibold bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             Não tem conta? Cadastre-se
           </Link>
         )}

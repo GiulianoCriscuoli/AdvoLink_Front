@@ -48,7 +48,7 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --font-body: var(--font-inter);
-  --font-title: var(--font-cormorant);
+  --font-title: var(--font-playfair);
 }
 
 :root {
@@ -168,7 +168,7 @@ a {
     scroll-behavior: smooth;
   }
 
-  h2 {
+  h1, h2, h3 {
     @apply font-title;
   }
 }

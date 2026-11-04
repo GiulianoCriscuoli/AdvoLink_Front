@@ -36,7 +36,11 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="hero text-white">
+        <section className="hero relative isolate overflow-hidden text-white pb-16">
+            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+                <div className="bg-dots absolute inset-0" />
+                <div className="absolute left-[10%] bottom-0 h-[320px] w-[320px] rounded-full bg-indigo-500/15 blur-3xl" />
+            </div>
             <div className="mx-auto">
                 <div className="hero-content flex flex-col md:flex-row">
                     <div className="hero-description">
@@ -62,15 +66,16 @@ export default function Hero() {
                         </div>
                     </div>
                     <div
-                    className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] overflow-hidden shrink-0"
+                    className="relative mt-10 md:mt-0 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] overflow-hidden shrink-0"
                     style={{ borderRadius: "63% 37% 54% 46% / 55% 48% 52% 45%" }}>
                     <Image
                         src="/slides/slide01.jpg"
-                        alt="Foto"
+                        alt="Advogada usando o celular"
                         fill
                         className="object-cover"
                         sizes="(max-width: 640px) 288px, (max-width: 768px) 320px, (max-width: 1024px) 384px, 420px"
-                        priority/>
+                        quality={90}
+                        preload/>
                     </div>
                 </div>
             </div>  
