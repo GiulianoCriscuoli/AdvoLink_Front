@@ -15,7 +15,7 @@ const titles = [
         highlight: "em um só link"
     },
     {
-        text: "Compliance garantido pelo ",
+        text: "Pensado para o ",
         highlight: "Código de Ética da OAB"
     }
 ];
@@ -60,9 +60,9 @@ export default function Hero() {
                                 </motion.h1>
                             </AnimatePresence>
                             </div>
-                        <p className="text-lg md:text-xl mb-8">A plataforma que centraliza seus contatos, redes e páginas em um só link, com compliance garantido pelo Código de Ética da OAB.</p>
+                        <p className="text-lg md:text-xl mb-8">Reúna WhatsApp, agendamento, site e redes sociais em uma página profissional, feita para a advocacia.</p>
                         <div className="hero-cta space-x-4">
-                            <Link href="/auth/registrar" target="_blank" className="px-6 py-3 rounded-lg text-black text-sm font-semibold hover:opacity-90 transition-opacity">Comece Free</Link>
+                            <Link href="/auth/registrar" target="_blank" className="px-6 py-3 rounded-lg text-black text-sm font-semibold hover:opacity-90 transition-opacity">Comece grátis</Link>
                         </div>
                     </div>
                     <div

@@ -19,7 +19,7 @@ export default function AuthCarousel() {
 
   const items = [
     {
-      title: "Personalize seu Linktree",
+      title: "Personalize sua página",
       description: "Adicione seus links, redes sociais e muito mais.",
       image: "/slides/slide01.jpg",
     },
@@ -29,8 +29,8 @@ export default function AuthCarousel() {
       image: "/slides/slide02.jpg",
     },
     {
-      title: "Analytics",
-      description: "Acompanhe cliques e métricas em tempo real.",
+      title: "Métricas",
+      description: "Acompanhe visualizações e cliques da sua página.",
       image: "/slides/slide03.jpg",
     },
   ];

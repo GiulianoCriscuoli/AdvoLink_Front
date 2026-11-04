@@ -22,7 +22,7 @@ export function Navbar() {
             <div className="space-x-4 flex items-center">
               <Link href="auth/login" target="_blank" className="login-button px-4 py-2 rounded-lg text-black text-sm font-semibold hover:opacity-90 transition-opacity">Entrar</Link>
               <div className="hero-cta space-x-4">
-                <Link href="/auth/registrar" target="_blank" className="px-6 py-3 rounded-lg text-black text-sm font-semibold hover:opacity-90 transition-opacity">Comece Free</Link>
+                <Link href="/auth/registrar" target="_blank" className="px-6 py-3 rounded-lg text-black text-sm font-semibold hover:opacity-90 transition-opacity">Comece grátis</Link>
               </div>
           </div>
         </div>

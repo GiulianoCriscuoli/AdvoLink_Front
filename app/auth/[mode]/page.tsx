@@ -67,7 +67,7 @@ export default function AuthPage() {
             setError(
                 error instanceof Error
                     ? error.message
-                    : "Ocorreu um erro inesperado."
+                    : "Não conseguimos conectar agora. Verifique sua internet e tente de novo."
             );
         } finally {
             setLoading(false);

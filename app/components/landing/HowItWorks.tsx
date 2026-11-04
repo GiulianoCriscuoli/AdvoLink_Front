@@ -33,7 +33,7 @@ export default function HowItWorks() {
           <h2
             id="como-funciona-title"
             className="text-black text-5xl font-bold">
-            Seja encontrado e gere mais leads com o seu link na bio das redes sociais
+            Seja encontrado por quem precisa de você
           </h2>
         </div>
 
@@ -56,7 +56,7 @@ export default function HowItWorks() {
                     <h3 className="text-xl font-semibold">
                       {step.title}
                     </h3>
-                    <p className="mt-2 max-w-sm leading-7 text-muted-foreground">
+                    <p className="mt-2 max-w-md text-lg leading-8 text-slate-700">
                       {step.description}
                     </p>
                   </div>
