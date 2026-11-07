@@ -24,7 +24,9 @@ export async function login(data: LoginPayload) {
     body: JSON.stringify(data),
   });
 
-  return response.json();
+  const body = await response.json();
+
+  return { ...body, ok: response.ok };
 }
 
 export async function register(data: RegisterPayload) {
@@ -38,5 +40,7 @@ export async function register(data: RegisterPayload) {
     body: JSON.stringify(data),
   });
 
-  return response.json();
+  const body = await response.json();
+
+  return { ...body, ok: response.ok };
 }

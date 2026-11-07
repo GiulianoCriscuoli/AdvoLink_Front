@@ -6,6 +6,7 @@ import Loader from "@/components/loadings/loading";
 type AuthFormProps = {
     mode: "login" | "registrar";
     error: string;
+    success: string;
     fieldErrors: Record<string, string>;
     loading: boolean;
     onSubmit: (
@@ -13,7 +14,7 @@ type AuthFormProps = {
     ) => void;
 };
 
-export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }: AuthFormProps) {
+export default function AuthForm({ mode, error, success, fieldErrors, loading, onSubmit }: AuthFormProps) {
   const isRegister = mode === "registrar";
   const [showPassword, setShowPassword] = useState(false);
 
@@ -29,6 +30,12 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
       )}
 
         <form className="flex flex-col" id="login-form" onSubmit={onSubmit}>
+
+          {success && (
+            <div role="status" className="mb-4 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-sm text-emerald-400">
+              {success}
+            </div>
+          )}
 
           {isRegister && (
             <div>
@@ -130,7 +137,6 @@ export default function AuthForm({ mode, error, fieldErrors, loading, onSubmit }
               {error}
             </div>
           )}
-
           <button
             type="submit"
             disabled={loading}

@@ -20,6 +20,7 @@ type FieldErrors = Record<string, string>;
 export default function AuthPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
     const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
     const params = useParams();
@@ -33,6 +34,7 @@ export default function AuthPage() {
         try {
             setLoading(true);
             setError("");
+            setSuccess("");
             setFieldErrors({});
 
             const data = Object.fromEntries(
@@ -44,7 +46,7 @@ export default function AuthPage() {
                     ? await login(data as LoginPayload)
                     : await register(data as RegisterPayload);
 
-            if (!result.status) {
+            if (!result.ok) {
                 setError(result.message);
 
                 const errors: FieldErrors = {};
@@ -60,8 +62,11 @@ export default function AuthPage() {
                 return;
             }
 
-            // Sucesso
-            console.log(result);
+            setSuccess(
+                mode === "login"
+                    ? "Login realizado com sucesso."
+                    : "Conta criada com sucesso."
+            );
 
         } catch (error) {
             setError(
@@ -149,6 +154,7 @@ export default function AuthPage() {
                     <AuthForm
                         mode={mode}
                         error={error}
+                        success={success}
                         fieldErrors={fieldErrors}
                         loading={loading}
                         onSubmit={handleSubmit}
