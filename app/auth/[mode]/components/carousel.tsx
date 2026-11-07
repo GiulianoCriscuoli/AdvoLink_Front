@@ -41,7 +41,7 @@ export default function AuthCarousel() {
       opts={{ loop: true }}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
-      className="hidden lg:block w-full h-full">
+      className="hidden lg:block w-full h-full [&_[data-slot=carousel-content]]:h-full">
 
     <CarouselContent className="h-full">
         {items.map((item) => (
