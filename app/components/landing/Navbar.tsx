@@ -5,13 +5,13 @@ export function Navbar() {
     <nav className=" text-white py-8">
       <div className="container mx-auto">
         <div className="nav-area flex justify-between items-center">
-            <div className="logo flex text-xl font-bold">
+            <Link href="/" aria-label="AdvoLink, página inicial" className="logo flex text-xl font-bold">
               ADvo
-              <div className="relative bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+              <span className="relative bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                 Link
                 <span className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 opacity-80" />
-              </div>
-            </div>
+              </span>
+            </Link>
             <div className="menu-options">
               <ul className="flex space-x-6">
                 <li><Link href="#como-funciona" className="hover:opacity-90 transition-opacity">Como Funciona</Link></li>

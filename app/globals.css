@@ -160,12 +160,13 @@ a {
   
   body {
     @apply bg-background text-foreground;
+    overscroll-behavior-y: none;
     background-color: #f0f8ff;
   }
 
   html {
     @apply font-body;
-    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
   }
 
   h1, h2, h3 {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from 'next/font/google'
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import "@/css/main.css";
 
