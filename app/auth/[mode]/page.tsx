@@ -47,7 +47,7 @@ export default function AuthPage() {
                     : await register(data as RegisterPayload);
 
             if (!result.ok) {
-                setError(result.message);
+                setError(result.message ?? "Não foi possível continuar. Tente novamente.");
 
                 const errors: FieldErrors = {};
 

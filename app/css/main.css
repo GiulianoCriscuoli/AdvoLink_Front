@@ -145,6 +145,17 @@ html {
     animation-delay: -2.5s;
 }
 
+/* Balão do WhatsApp é um link: contorno verde ao passar o mouse ou focar pelo teclado */
+a.hero-chip {
+    transition: box-shadow 0.2s ease;
+}
+
+a.hero-chip:hover,
+a.hero-chip:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #34d399, 0 12px 30px -8px rgb(30 36 112 / 0.35);
+}
+
 @keyframes hero-float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Minus, Sparkles } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import Reveal from "@/components/ui/Reveal";
@@ -127,14 +127,6 @@ export default function Pricing() {
                       <Check aria-hidden className="size-3.5" strokeWidth={3} />
                     </span>
                     <span className="text-white/95">{feature}</span>
-                  </li>
-                ))}
-                {plan.limitations?.map((limitation) => (
-                  <li key={limitation} className="flex items-start gap-3 text-white/55">
-                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border border-white/30">
-                      <Minus aria-hidden className="size-3.5" strokeWidth={3} />
-                    </span>
-                    <span>{limitation}</span>
                   </li>
                 ))}
               </ul>

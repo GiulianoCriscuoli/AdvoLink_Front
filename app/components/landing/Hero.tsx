@@ -3,8 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { AnimatePresence, motion } from "motion/react";
-import { CalendarDays, MessageCircle } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import { useEffect, useState } from "react";
+
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const titles = [
     {
@@ -82,14 +85,19 @@ export default function Hero() {
                                 preload/>
                         </div>
 
-                        <div aria-hidden className="hero-chip absolute -left-6 top-10 sm:-left-10">
+                        <a
+                            href={whatsappLink()}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hero-chip absolute -left-6 top-10 sm:-left-10"
+                        >
                             <span className="flex size-9 items-center justify-center rounded-full bg-emerald-500 text-white">
-                                <MessageCircle className="size-5" />
+                                <WhatsAppIcon className="size-5" />
                             </span>
                             <span>
                                 <strong className="block text-sm text-slate-900">Fale no WhatsApp</strong>
                             </span>
-                        </div>
+                        </a>
                         <div aria-hidden className="hero-chip hero-chip-delay absolute -right-4 bottom-8 sm:-right-6">
                             <span className="flex size-9 items-center justify-center rounded-full bg-(--cta-primary) text-white">
                                 <CalendarDays className="size-5" />
