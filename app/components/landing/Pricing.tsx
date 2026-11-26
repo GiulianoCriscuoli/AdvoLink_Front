@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Minus, Sparkles } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import Reveal from "@/components/ui/Reveal";
 
 const plans = [
   {
@@ -15,6 +16,11 @@ const plans = [
       "Botão de WhatsApp",
       "Até 5 links e redes sociais",
       "Modelos prontos para advocacia",
+    ],
+    // o que fica de fora, mostrado em cinza para incentivar o upgrade
+    limitations: [
+      "Marca AdvoLink na página",
+      "Sem métricas de acesso",
     ],
     cta: "Comece grátis",
     color: "plan-free",
@@ -64,28 +70,33 @@ export default function Pricing() {
     <section
       id="planos"
       aria-labelledby="planos-title"
-      className="bg-background mt-28 pb-24"
+      className="section-spacing md:pb-22"
     >
       <div className="max-w-6xl container mx-auto flex flex-col items-center justify-center">
-        <div className="w-[80%] max-w-2xl text-center">
-          <h2 id="planos-title" className="text-5xl font-bold">
+        <Reveal className="max-w-2xl px-4 text-center">
+          <h2 id="planos-title" className="section-title text-balance">
             Um plano para cada momento da sua advocacia
           </h2>
-          <p className="mt-4 text-lg text-slate-700">
+          <p className="mt-4 text-lg text-balance text-slate-700">
             Seja você advogado ou escritório, comece grátis
             e evolua no seu ritmo. Sem fidelidade.
           </p>
-        </div>
+        </Reveal>
 
-        <ul className="plan-cards mt-20 grid w-full gap-8 md:grid-cols-3 md:items-stretch md:gap-6">
-          {plans.map((plan) => (
-            <li
+        <ul className="plan-cards mt-16 grid w-full gap-8 md:grid-cols-3 md:items-stretch md:gap-6">
+          {plans.map((plan, i) => (
+            <Reveal
+              as="li"
               key={plan.id}
+              delay={i * 0.15}
+              className={cn("flex", plan.featured && "order-first z-10 md:order-0")}
+            >
+            <div
               className={cn(
-                "plan-card relative flex flex-col rounded-3xl p-8 text-white",
+                "plan-card relative flex flex-1 flex-col rounded-3xl p-8 text-white",
                 plan.color,
                 plan.featured
-                  ? "is-featured order-first z-10 shadow-2xl shadow-indigo-900/40 ring-4 ring-cyan-300/70 md:order-0 md:-my-6 md:py-14"
+                  ? "shadow-2xl shadow-indigo-900/40 ring-4 ring-cyan-300/70 md:-my-6 md:py-14"
                   : "shadow-lg"
               )}
             >
@@ -96,8 +107,8 @@ export default function Pricing() {
                 </span>
               )}
 
-              <h3 className="tip text-2xl font-bold">{plan.name}</h3>
-              <p className="second-text mt-1 text-sm text-white/80">
+              <h3 className="text-2xl font-bold">{plan.name}</h3>
+              <p className="mt-1 text-sm text-white/80">
                 {plan.description}
               </p>
 
@@ -122,6 +133,14 @@ export default function Pricing() {
                     <span className="text-white/95">{feature}</span>
                   </li>
                 ))}
+                {plan.limitations?.map((limitation) => (
+                  <li key={limitation} className="flex items-start gap-3 text-white/55">
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border border-white/30">
+                      <Minus aria-hidden className="size-3.5" strokeWidth={3} />
+                    </span>
+                    <span>{limitation}</span>
+                  </li>
+                ))}
               </ul>
 
               <Link
@@ -136,7 +155,8 @@ export default function Pricing() {
               >
                 {plan.cta}
               </Link>
-            </li>
+            </div>
+            </Reveal>
           ))}
         </ul>
       </div>

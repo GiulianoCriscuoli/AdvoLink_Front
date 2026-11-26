@@ -2,7 +2,6 @@
     color: var(--cta-primary);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
     font-size: 1.5rem;
 }
 
@@ -12,7 +11,12 @@
     text-decoration: none;
 }
 
-/* Barra de rolagem roxa */
+#menu-mobile .hero-cta a,
+#menu-mobile .login-button {
+    display: block;
+    text-align: center;
+}
+
 html {
     scrollbar-color: var(--cta-primary) #f0f8ff;
 }
@@ -36,39 +40,6 @@ html {
     background-color: #2f3785;
 }
 
-.hero {
-    height: 70%;
-    margin-top: 3.5rem;
-}
-
-.bg-dots {
-    background-image: radial-gradient(#3e47aa22 1px, transparent 1px);
-    background-size: 22px 22px;
-    -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
-    mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
-}
-
-.hero .hero-content {
-    justify-content: space-evenly;
-}
-
-.hero .hero-description h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.hero .hero-description p {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
-    max-width: 500px;
-}
-
-.hero .hero-description, 
-.hero .hero-banner {
-    color: var(--cta-primary);
-}
-
 .hero-cta a {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -77,7 +48,7 @@ html {
     border-radius: 0.375rem;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: opacity 0.3s ease;
     font-size: 1.2rem;
 }
 
@@ -90,34 +61,108 @@ html {
     border-radius: 0.375rem;
     text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: opacity 0.3s ease;
     font-size: 1.2rem;
 }
 
-section h2#como-funciona-title  {
-    font-size: 2.8rem;
+.hero-cta a:hover,
+.login-button:hover {
+    opacity: 0.9;
+}
+
+@layer components {
+    .section-spacing {
+        padding-block: 4rem; /* py-16 */
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        line-height: 1.15;
+        font-weight: 700;
+        color: var(--cta-primary);
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+}
+
+.hero .hero-description {
     color: var(--cta-primary);
 }
 
+.hero .hero-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.2rem, 3.6vw, 3.15rem);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.hero .hero-title-box {
+    margin-bottom: 1.6rem;
+}
+
+.hero .hero-description p {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero-visual {
+    --blob: 63% 37% 54% 46% / 55% 48% 52% 45%;
+}
+
+.hero-photo,
+.hero-shape-solid,
+.hero-shape-outline {
+    border-radius: var(--blob);
+}
+
+.hero-shape-solid {
+    background: linear-gradient(135deg, var(--cta-primary), #1e2470);
+}
+
+.hero-shape-outline {
+    border: 3px solid #22d3ee;
+}
+
+.hero-chip {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem 0.625rem 0.625rem;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 12px 30px -8px rgb(30 36 112 / 0.35);
+    animation: hero-float 5s ease-in-out infinite;
+}
+
+.hero-chip-delay {
+    animation-delay: -2.5s;
+}
+
+@keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-chip {
+        animation: none;
+    }
+}
+
+/* ---------- Como funciona ---------- */
 section#como-funciona h3 {
     font-size: 1.6rem;
     color: var(--cta-primary);
 }
 
-/* .contrast{
-  background: linear-gradient(90deg, #0e7490, #053a49);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}  */
-
-/* Planos */
-section h2#planos-title {
-    font-size: 2.8rem;
-    color: var(--cta-primary);
-}
-
+/* ---------- Planos ---------- */
 .plan-cards .plan-free {
     background-color: var(--background-primary);
 }
@@ -144,36 +189,21 @@ section h2#planos-title {
         transform: scale(1.05);
     }
 
-    html:not(.lenis-scrolling) .plan-cards:hover > .plan-card:not(:hover) {
+    html:not(.lenis-scrolling) .plan-cards:hover .plan-card:not(:hover) {
         filter: blur(3px);
         transform: scale(0.95);
     }
 }
 
+/* ---------- Rodapé ---------- */
 footer {
     background-color: var(--cta-primary);
 }
 
+/* ---------- Celular ---------- */
 @media (max-width: 768px) {
-    .nav-area {
-        flex-direction: column;
-        align-items: center;
-         gap: 20px;
-    }
-
-    .hero {
-        height: auto;
-        margin-top: 1.25rem;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    section h2#como-funciona-title,
-    section h2#planos-title {
-        font-size: 2.2rem;
+    .hero .hero-description p {
+        font-size: 1.15rem;
     }
 
     main {

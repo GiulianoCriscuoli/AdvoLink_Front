@@ -1,4 +1,5 @@
 import PhoneMockup from "./PhoneMockup";
+import Reveal from "@/components/ui/Reveal";
 
 const steps = [
   {
@@ -26,21 +27,24 @@ export default function HowItWorks() {
     <section
       id="como-funciona"
       aria-labelledby="como-funciona-title"
-      className="bg-background mt-20"
+      className="section-spacing overflow-x-clip"
     >
       <div className="max-w-6xl container mx-auto flex flex-col items-center justify-center">
-        <div className="w-[80%] max-w-2xl">
-          <h2
-            id="como-funciona-title"
-            className="text-black text-5xl font-bold">
+        <Reveal className="max-w-2xl px-4 text-center">
+          <h2 id="como-funciona-title" className="section-title text-balance">
             Seja encontrado por quem precisa de você
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="mt-16 flex w-full flex-col items-center gap-12 md:flex-row md:justify-center md:gap-20">
+        <div className="mt-12 flex w-full flex-col items-center gap-12 md:flex-row md:justify-center md:gap-20">
         <ol className="max-w-xl">
             {steps.map((step, i) => (
-                <li key={step.number} className="group relative flex gap-6 pb-12 last:pb-0">
+                <Reveal
+                  as="li"
+                  key={step.number}
+                  delay={i * 0.15}
+                  className="group relative flex gap-6 pb-12 last:pb-0"
+                >
                   {i < steps.length - 1 && (
                     <span
                       aria-hidden
@@ -60,12 +64,12 @@ export default function HowItWorks() {
                       {step.description}
                     </p>
                   </div>
-                </li>
+                </Reveal>
             ))}
         </ol>
-          <div className="shrink-0">
+          <Reveal direction="from-right" delay={0.2} className="shrink-0">
             <PhoneMockup />
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { BadgeCheck, CalendarDays, Globe, Mail, MessageCircle } from "lucide-react";
+import { BadgeCheck, CalendarDays, Globe, Mail, MessageCircle, UserRound } from "lucide-react";
 
 const links = [
   { icon: MessageCircle, label: "Fale no WhatsApp" },
@@ -8,26 +7,28 @@ const links = [
   { icon: Mail, label: "Enviar e-mail" },
 ];
 
+const areas = ["Família", "Divórcio", "Inventário"];
+
 export default function PhoneMockup() {
   return (
     <div
       aria-hidden
-      className="relative w-52.5 sm:w-57.5 md:w-62.5 aspect-[9/19] rounded-[2.5rem] border-[8px] border-[#07010f] bg-[#07010f] shadow-2xl shadow-indigo-900/30"
+      className="relative w-60 md:w-62.5 aspect-9/19 rounded-[2.5rem] border-8 border-[#07010f] bg-[#07010f] shadow-2xl shadow-indigo-900/30"
     >
       <div className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full bg-[#07010f]" />
 
       <div className="flex h-full flex-col items-center overflow-hidden rounded-[2rem] bg-linear-to-b from-[#3e47aa] to-[#1e2470] px-4 pt-10 text-white">
-        <div className="relative h-16 w-16 overflow-hidden rounded-full ring-2 ring-cyan-300">
-          <Image src="/slides/slide01.jpg" alt="" width={64} height={64} quality={90} className="h-full w-full object-cover" />
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20">
+          <UserRound className="h-7 w-7 text-white/60" strokeWidth={1.5} />
         </div>
 
         <p className="mt-3 flex items-center gap-1 text-sm font-semibold">
-          Dra. Celinne Madruga
+          Dra. Ana Ribeiro
           <BadgeCheck className="h-4 w-4 text-cyan-300" />
         </p>
-        <p className="text-[11px] text-indigo-100">OAB/RS 121.600 · Direito Tributário</p>
+        <p className="text-center text-[11px] text-indigo-100">OAB/SP 000.000 · Direito de Família</p>
 
-        <ul className="mt-5 w-full space-y-2.5">
+        <ul className="mt-4 w-full space-y-2 sm:mt-5 sm:space-y-2.5">
           {links.map(({ icon: Icon, label }) => (
             <li
               key={label}
@@ -39,7 +40,18 @@ export default function PhoneMockup() {
           ))}
         </ul>
 
-        <p className="mt-auto mb-4 text-[10px] text-indigo-200">advolink.com.br/celinnemadruga</p>
+        <div className="mt-4 w-full text-center sm:mt-5">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-indigo-200">Áreas de atuação</p>
+          <div className="mt-2 flex flex-wrap justify-center gap-1.5">
+            {areas.map((area) => (
+              <span key={area} className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-white/90 ring-1 ring-white/15">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <p className="mt-auto mb-4 text-[10px] text-indigo-200">advolink.com.br/anaribeiro</p>
       </div>
     </div>
   );
