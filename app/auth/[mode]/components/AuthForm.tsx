@@ -23,7 +23,7 @@ export default function AuthForm({ mode, error, success, fieldErrors, loading, o
 
       {isRegister ? (
         <h2 className="mt-4">
-          <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">Crie sua página grátis</span>
+          <span className="bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">Crie sua página grátis</span>
         </h2>
       ) : (
         <h2 className="text-white text-sm mt-4">Que bom ter você de volta</h2>
@@ -79,7 +79,7 @@ export default function AuthForm({ mode, error, success, fieldErrors, loading, o
                 <label htmlFor="password" className="text-sm text-white">Senha</label>
 
                 {!isRegister && (
-                  <a href="#" className="text-xs font-semibold bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                  <a href="#" className="text-xs font-semibold bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
                     Esqueceu a senha?
                   </a>
                 )}
@@ -140,7 +140,7 @@ export default function AuthForm({ mode, error, success, fieldErrors, loading, o
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity mt-4 bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 text-white">
+            className="w-full py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity mt-4 bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 text-white">
             {isRegister ? "Criar conta" : "Entrar"}
           </button>
 
@@ -166,11 +166,11 @@ export default function AuthForm({ mode, error, success, fieldErrors, loading, o
 
       <p className="text-center flex flex-col text-xs text-gray-600 mt-6">
         {isRegister ? (
-          <Link href="/auth/login" className="font-semibold bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+          <Link href="/auth/login" className="font-semibold bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             Já tem uma conta? Entre aqui
           </Link>
         ) : (
-          <Link href="/auth/registrar" className="font-semibold bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+          <Link href="/auth/registrar" className="font-semibold bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             Não tem conta? Cadastre-se
           </Link>
         )}

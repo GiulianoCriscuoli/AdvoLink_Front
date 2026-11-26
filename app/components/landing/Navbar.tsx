@@ -7,9 +7,9 @@ export function Navbar() {
         <div className="nav-area flex justify-between items-center">
             <div className="logo flex text-xl font-bold">
               ADvo
-              <div className="relative bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+              <div className="relative bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                 Link
-                <span className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 opacity-80" />
+                <span className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 opacity-80" />
               </div>
             </div>
             <div className="menu-options">

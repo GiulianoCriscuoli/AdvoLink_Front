@@ -41,13 +41,13 @@ export default function AuthCarousel() {
       opts={{ loop: true }}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
-      className="hidden lg:block w-full h-full [&_[data-slot=carousel-content]]:h-full">
+      className="hidden lg:block w-full h-full **:data-[slot=carousel-content]:h-full">
 
     <CarouselContent className="h-full">
         {items.map((item) => (
             <CarouselItem key={item.title} className="h-full">
 
-                <div className="relative h-full min-h-[650px] overflow-hidden">
+                <div className="relative h-full min-h-162.5 overflow-hidden">
 
                     <Image
                         src={item.image}
@@ -58,7 +58,7 @@ export default function AuthCarousel() {
 
                     <div className="absolute inset-0 bg-black/40" />
 
-                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/60 to-transparent">
+                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-linear-to-t from-black via-black/60 to-transparent">
 
                         <h2 className="text-4xl font-black text-white">
                             {item.title}

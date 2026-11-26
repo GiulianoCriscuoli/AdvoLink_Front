@@ -48,7 +48,7 @@ export default function HowItWorks() {
                     />
                   )}
 
-                  <span className="w-24 shrink-0 text-center text-7xl leading-none bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+                  <span className="w-24 shrink-0 text-center text-7xl leading-none bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                     {step.number}
                   </span>
 

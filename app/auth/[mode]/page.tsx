@@ -119,15 +119,15 @@ export default function AuthPage() {
                     absolute
                     left-1/2
                     top-1/2
-                    h-[500px]
-                    w-[500px]
+                    h-125
+                    w-125
                     -translate-x-1/2
                     -translate-y-1/2
                     rounded-full
                     bg-amber-400/5
                     blur-[180px]
-                    sm:h-[700px]
-                    sm:w-[700px]
+                    sm:h-175
+                    sm:w-175
                 "
             />
 
@@ -137,7 +137,7 @@ export default function AuthPage() {
                     relative
                     z-10
                     flex
-                    min-h-[650px]
+                    min-h-162.5
                     w-full
                     max-w-6xl
                     overflow-hidden

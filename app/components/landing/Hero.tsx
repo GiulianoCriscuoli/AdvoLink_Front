@@ -39,7 +39,7 @@ export default function Hero() {
         <section className="hero relative isolate overflow-hidden text-white pb-16">
             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
                 <div className="bg-dots absolute inset-0" />
-                <div className="absolute left-[10%] bottom-0 h-[320px] w-[320px] rounded-full bg-indigo-500/15 blur-3xl" />
+                <div className="absolute left-[10%] bottom-0 h-80 w-80 rounded-full bg-indigo-500/15 blur-3xl" />
             </div>
             <div className="mx-auto">
                 <div className="hero-content flex flex-col md:flex-row">
@@ -54,7 +54,7 @@ export default function Hero() {
                                     exit={{ y: -40, opacity: 0 }}
                                 >
                                     {titles[index].text}{" "}
-                                    <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+                                    <span className="bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                                         {titles[index].highlight}
                                     </span>
                                 </motion.h1>
@@ -66,7 +66,7 @@ export default function Hero() {
                         </div>
                     </div>
                     <div
-                    className="relative mt-10 md:mt-0 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] overflow-hidden shrink-0"
+                    className="relative mt-10 md:mt-0 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-105 lg:h-105 overflow-hidden shrink-0"
                     style={{ borderRadius: "63% 37% 54% 46% / 55% 48% 52% 45%" }}>
                     <Image
                         src="/slides/slide01.jpg"

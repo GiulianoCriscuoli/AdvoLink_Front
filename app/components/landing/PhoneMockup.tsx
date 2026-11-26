@@ -12,11 +12,11 @@ export default function PhoneMockup() {
   return (
     <div
       aria-hidden
-      className="relative w-[210px] sm:w-[230px] md:w-[250px] aspect-[9/19] rounded-[2.5rem] border-[8px] border-[#07010f] bg-[#07010f] shadow-2xl shadow-indigo-900/30"
+      className="relative w-52.5 sm:w-57.5 md:w-62.5 aspect-[9/19] rounded-[2.5rem] border-[8px] border-[#07010f] bg-[#07010f] shadow-2xl shadow-indigo-900/30"
     >
       <div className="absolute left-1/2 top-2 z-10 h-4 w-20 -translate-x-1/2 rounded-full bg-[#07010f]" />
 
-      <div className="flex h-full flex-col items-center overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#3e47aa] to-[#1e2470] px-4 pt-10 text-white">
+      <div className="flex h-full flex-col items-center overflow-hidden rounded-[2rem] bg-linear-to-b from-[#3e47aa] to-[#1e2470] px-4 pt-10 text-white">
         <div className="relative h-16 w-16 overflow-hidden rounded-full ring-2 ring-cyan-300">
           <Image src="/slides/slide01.jpg" alt="" width={64} height={64} quality={90} className="h-full w-full object-cover" />
         </div>
