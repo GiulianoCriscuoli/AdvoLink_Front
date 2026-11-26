@@ -39,7 +39,7 @@ export default function Hero() {
     return (
         <section className="hero relative isolate overflow-hidden pt-10 pb-16 max-md:-mx-4 md:pt-8">
             <div className="container mx-auto">
-                <div className="hero-content flex flex-col items-center gap-12 px-6 md:flex-row md:justify-between md:px-0">
+                <div className="hero-content flex flex-col items-center gap-12 px-6 lg:flex-row lg:justify-between lg:px-8">
                     <div className="hero-description">
                         <div className="hero-title-box grid w-full max-w-3xl overflow-hidden">
                             {titles.map((title) => (
@@ -67,7 +67,7 @@ export default function Hero() {
                             <Link href="/auth/registrar" target="_blank">Comece grátis</Link>
                         </div>
                     </div>
-                    <div className="hero-visual relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-105 lg:h-105 shrink-0">
+                    <div className="hero-visual relative size-60 min-[340px]:size-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-105 lg:h-105 shrink-0">
                         {/* formas sólidas atrás da foto */}
                         <div aria-hidden className="hero-shape-solid absolute inset-0 translate-x-5 translate-y-5 rotate-6" />
                         <div aria-hidden className="hero-shape-outline absolute inset-0 -translate-x-4 -translate-y-4 -rotate-6" />
@@ -90,7 +90,7 @@ export default function Hero() {
                                 <strong className="block text-sm text-slate-900">Fale no WhatsApp</strong>
                             </span>
                         </div>
-                        <div aria-hidden className="hero-chip hero-chip-delay absolute -right-4 bottom-8 sm:-right-8">
+                        <div aria-hidden className="hero-chip hero-chip-delay absolute -right-4 bottom-8 sm:-right-6">
                             <span className="flex size-9 items-center justify-center rounded-full bg-(--cta-primary) text-white">
                                 <CalendarDays className="size-5" />
                             </span>

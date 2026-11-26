@@ -29,7 +29,7 @@ export default function HowItWorks() {
       aria-labelledby="como-funciona-title"
       className="section-spacing overflow-x-clip"
     >
-      <div className="max-w-6xl container mx-auto flex flex-col items-center justify-center">
+      <div className="max-w-6xl container mx-auto flex md:px-8 flex-col items-center justify-center">
         <Reveal className="max-w-2xl px-4 text-center">
           <h2 id="como-funciona-title" className="section-title text-balance">
             Seja encontrado por quem precisa de você
@@ -43,16 +43,16 @@ export default function HowItWorks() {
                   as="li"
                   key={step.number}
                   delay={i * 0.15}
-                  className="group relative flex gap-6 pb-12 last:pb-0"
+                  className="group relative flex gap-4 pb-12 last:pb-0 sm:gap-6"
                 >
                   {i < steps.length - 1 && (
                     <span
                       aria-hidden
-                      className="absolute left-12 top-20 bottom-3 -translate-x-1/2 border-l-2 border-dashed border-indigo-200"
+                      className="absolute left-8 top-14 bottom-3 sm:left-12 sm:top-20 -translate-x-1/2 border-l-2 border-dashed border-indigo-200"
                     />
                   )}
 
-                  <span className="w-24 shrink-0 text-center text-7xl leading-none bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
+                  <span className="w-16 shrink-0 text-center text-5xl leading-none sm:w-24 sm:text-7xl bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                     {step.number}
                   </span>
 

@@ -16,7 +16,7 @@ export function Navbar() {
 
   return (
     <nav className="relative z-20 py-6 md:py-8">
-      <div className="container mx-auto px-6 md:px-0">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
             <Link href="/" aria-label="AdvoLink, página inicial" className="logo flex font-bold">
               ADvo
@@ -27,14 +27,14 @@ export function Navbar() {
             </Link>
 
             {/* desktop */}
-            <ul className="menu-options hidden gap-6 md:flex">
+            <ul className="menu-options hidden gap-6 lg:flex">
               {menuLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="transition-opacity hover:opacity-80">{link.label}</Link>
                 </li>
               ))}
             </ul>
-            <div className="hidden items-center gap-4 md:flex">
+            <div className="hidden items-center gap-4 lg:flex">
               <Link href="/auth/login" target="_blank" className="login-button">Entrar</Link>
               <div className="hero-cta">
                 <Link href="/auth/registrar" target="_blank">Comece grátis</Link>
@@ -48,7 +48,7 @@ export function Navbar() {
               aria-expanded={open}
               aria-controls="menu-mobile"
               aria-label={open ? "Fechar menu" : "Abrir menu"}
-              className="flex size-11 items-center justify-center rounded-lg text-(--cta-primary) md:hidden"
+              className="flex size-11 items-center justify-center rounded-lg text-(--cta-primary) lg:hidden"
             >
               {open ? <X className="size-7" /> : <Menu className="size-7" />}
             </button>
@@ -57,7 +57,7 @@ export function Navbar() {
         {open && (
           <div
             id="menu-mobile"
-            className="absolute inset-x-4 top-full rounded-2xl bg-white p-6 shadow-xl shadow-indigo-900/15 md:hidden"
+            className="absolute inset-x-4 top-full rounded-2xl bg-white p-6 shadow-xl shadow-indigo-900/15 lg:hidden"
           >
             <ul className="menu-options flex flex-col gap-4">
               {menuLinks.map((link) => (

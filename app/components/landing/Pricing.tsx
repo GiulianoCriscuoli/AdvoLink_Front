@@ -9,7 +9,7 @@ const plans = [
     id: "gratuito",
     name: "Gratuito",
     price: "R$ 0",
-    period: "para sempre",
+    period: "vitalício",
     description: "Para começar totalmente de graça.",
     features: [
       "Página profissional com seu link",
@@ -17,11 +17,7 @@ const plans = [
       "Até 5 links e redes sociais",
       "Modelos prontos para advocacia",
     ],
-    // o que fica de fora, mostrado em cinza para incentivar o upgrade
-    limitations: [
-      "Marca AdvoLink na página",
-      "Sem métricas de acesso",
-    ],
+
     cta: "Comece grátis",
     color: "plan-free",
     featured: false,
@@ -70,9 +66,9 @@ export default function Pricing() {
     <section
       id="planos"
       aria-labelledby="planos-title"
-      className="section-spacing md:pb-22"
+      className="section-spacing lg:pb-22"
     >
-      <div className="max-w-6xl container mx-auto flex flex-col items-center justify-center">
+      <div className="max-w-6xl container mx-auto flex md:px-8 flex-col items-center justify-center">
         <Reveal className="max-w-2xl px-4 text-center">
           <h2 id="planos-title" className="section-title text-balance">
             Um plano para cada momento da sua advocacia
@@ -83,20 +79,20 @@ export default function Pricing() {
           </p>
         </Reveal>
 
-        <ul className="plan-cards mt-16 grid w-full gap-8 md:grid-cols-3 md:items-stretch md:gap-6">
+        <ul className="plan-cards mt-16 grid w-full max-w-md gap-8 lg:max-w-none lg:grid-cols-3 lg:items-stretch lg:gap-6">
           {plans.map((plan, i) => (
             <Reveal
               as="li"
               key={plan.id}
               delay={i * 0.15}
-              className={cn("flex", plan.featured && "order-first z-10 md:order-0")}
+              className={cn("flex", plan.featured && "order-first z-10 lg:order-0")}
             >
             <div
               className={cn(
-                "plan-card relative flex flex-1 flex-col rounded-3xl p-8 text-white",
+                "plan-card relative flex flex-1 flex-col rounded-3xl p-6 text-white min-[340px]:p-8",
                 plan.color,
                 plan.featured
-                  ? "shadow-2xl shadow-indigo-900/40 ring-4 ring-cyan-300/70 md:-my-6 md:py-14"
+                  ? "shadow-2xl shadow-indigo-900/40 ring-4 ring-cyan-300/70 lg:-my-6 lg:py-14"
                   : "shadow-lg"
               )}
             >
@@ -113,7 +109,7 @@ export default function Pricing() {
               </p>
 
               <p className="mt-6 flex items-baseline gap-1 border-b border-white/20 pb-6">
-                <span className={cn("font-black tracking-tight", plan.featured ? "text-5xl" : "text-4xl")}>
+                <span className={cn("font-black tracking-tight", plan.featured ? "text-4xl min-[340px]:text-5xl" : "text-4xl")}>
                   {plan.price}
                 </span>
                 <span className="text-sm text-white/80">{plan.period}</span>

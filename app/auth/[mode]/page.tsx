@@ -137,7 +137,7 @@ export default function AuthPage() {
                     relative
                     z-10
                     flex
-                    min-h-162.5
+                    lg:min-h-162.5
                     w-full
                     max-w-6xl
                     overflow-hidden
