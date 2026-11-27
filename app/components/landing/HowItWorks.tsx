@@ -48,7 +48,7 @@ export default function HowItWorks() {
                   {i < steps.length - 1 && (
                     <span
                       aria-hidden
-                      className="absolute left-8 top-14 bottom-3 sm:left-12 sm:top-20 -translate-x-1/2 border-l-2 border-dashed border-indigo-200"
+                      className="absolute left-8 top-14 bottom-3 sm:left-12 sm:top-20 -translate-x-1/2 border-l-2 border-dashed border-(--line)"
                     />
                   )}
 
@@ -60,7 +60,7 @@ export default function HowItWorks() {
                     <h3 className="text-xl font-semibold">
                       {step.title}
                     </h3>
-                    <p className="mt-2 max-w-md text-lg leading-8 text-slate-700">
+                    <p className="mt-2 max-w-md text-lg leading-8 text-(--body-text)">
                       {step.description}
                     </p>
                   </div>

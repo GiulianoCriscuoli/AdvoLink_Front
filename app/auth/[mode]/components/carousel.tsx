@@ -44,7 +44,7 @@ export default function AuthCarousel() {
       className="hidden lg:block w-full h-full **:data-[slot=carousel-content]:h-full">
 
     <CarouselContent className="h-full">
-        {items.map((item) => (
+        {items.map((item, i) => (
             <CarouselItem key={item.title} className="h-full">
 
                 <div className="relative h-full min-h-162.5 overflow-hidden">
@@ -54,6 +54,8 @@ export default function AuthCarousel() {
                         alt={item.title}
                         fill
                         className="object-cover"
+                        sizes="(min-width: 1152px) 690px, 60vw"
+                        loading={i === 0 ? "eager" : "lazy"}
                     />
 
                     <div className="absolute inset-0 bg-black/40" />

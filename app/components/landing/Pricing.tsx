@@ -73,7 +73,7 @@ export default function Pricing() {
           <h2 id="planos-title" className="section-title text-balance">
             Um plano para cada momento da sua advocacia
           </h2>
-          <p className="mt-4 text-lg text-balance text-slate-700">
+          <p className="mt-4 text-lg text-balance text-(--body-text)">
             Seja você advogado ou escritório, comece grátis
             e evolua no seu ritmo. Sem fidelidade.
           </p>
@@ -92,12 +92,12 @@ export default function Pricing() {
                 "plan-card relative flex flex-1 flex-col rounded-3xl p-6 text-white min-[340px]:p-8",
                 plan.color,
                 plan.featured
-                  ? "shadow-2xl shadow-indigo-900/40 ring-4 ring-cyan-300/70 lg:-my-6 lg:py-14"
+                  ? "shadow-2xl shadow-indigo-900/40 ring-4 ring-cyan-300/70 dark:ring-[#c8a75d]/70 lg:-my-6 lg:py-14"
                   : "shadow-lg"
               )}
             >
               {plan.featured && (
-                <span className="absolute -top-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-linear-to-r from-cyan-300 to-cyan-500 px-5 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-900 shadow-lg shadow-cyan-500/40">
+                <span className="absolute -top-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-linear-to-r from-cyan-300 to-cyan-500 dark:from-[#e3c98a] dark:to-[#c8a75d] px-5 py-1.5 text-xs font-bold uppercase tracking-wider text-slate-900 shadow-lg shadow-cyan-500/40 dark:shadow-[#c8a75d]/40">
                   <Sparkles aria-hidden className="size-4" />
                   Mais popular
                 </span>

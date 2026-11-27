@@ -55,6 +55,15 @@
   --background-primary: #1699ad;
   --cta-primary: #3e47aa;
   --cta-primary-hover: #07010f;
+  /* tema claro/escuro da landing (o escuro segue o sistema, ver @media abaixo) */
+  --page-bg: #f0f8ff;
+  --surface: #ffffff;
+  --heading: var(--cta-primary);
+  --title-text: var(--cta-primary);
+  --body-text: #334155;
+  --line: #c7d2fe;
+  --brand-deep: #1e2470;
+  --shape-outline: #22d3ee;
   --text: #EEE;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -86,6 +95,22 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* tema escuro: só ativa quando o botão coloca a classe .dark no <html> */
+html.dark {
+  --cta-primary: #0e7490;
+  --page-bg: #0a1622;
+  --surface: #12212f;
+  --heading: #22d3ee;
+  --title-text: #f1f5f9;
+  --body-text: #cbd5e1;
+  --line: #c8a75d66;          /* dourado translúcido: linha dos passos */
+  --accent-2: #c8a75d;        /* secundária: dourado (navy + ciano + dourado) */
+  --accent-2-soft: #e3c98a;   /* dourado claro para hover de texto */
+  --brand-deep: #083344;
+  --shape-outline: var(--accent-2);
+  color-scheme: dark;
 }
 
 .dark {
@@ -145,7 +170,7 @@ a {
   body {
     @apply bg-background text-foreground;
     overscroll-behavior-y: none;
-    background-color: #f0f8ff;
+    background-color: var(--page-bg);
   }
 
   html {

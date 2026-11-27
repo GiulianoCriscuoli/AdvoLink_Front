@@ -1,14 +1,18 @@
 .menu-options a {
-    color: var(--cta-primary);
+    color: var(--heading);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.5rem;
 }
 
 .logo {
-    color: var(--cta-primary);
+    color: var(--heading);
     font-size: 2rem;
     text-decoration: none;
+}
+
+html.dark .logo {
+    color: #fff;
 }
 
 #menu-mobile .hero-cta a,
@@ -18,7 +22,7 @@
 }
 
 html {
-    scrollbar-color: var(--cta-primary) #f0f8ff;
+    scrollbar-color: var(--cta-primary) var(--page-bg);
 }
 
 ::-webkit-scrollbar {
@@ -27,13 +31,13 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f0f8ff;
+    background: var(--page-bg);
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--cta-primary);
     border-radius: 9999px;
-    border: 2px solid #f0f8ff;
+    border: 2px solid var(--page-bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -79,7 +83,7 @@ html {
         font-size: 2.5rem;
         line-height: 1.15;
         font-weight: 700;
-        color: var(--cta-primary);
+        color: var(--heading);
     }
 
     @media (max-width: 768px) {
@@ -90,7 +94,7 @@ html {
 }
 
 .hero .hero-description {
-    color: var(--cta-primary);
+    color: var(--heading);
 }
 
 .hero .hero-title {
@@ -122,11 +126,11 @@ html {
 }
 
 .hero-shape-solid {
-    background: linear-gradient(135deg, var(--cta-primary), #1e2470);
+    background: linear-gradient(135deg, var(--cta-primary), var(--brand-deep));
 }
 
 .hero-shape-outline {
-    border: 3px solid #22d3ee;
+    border: 3px solid var(--shape-outline);
 }
 
 .hero-chip {
@@ -170,7 +174,7 @@ a.hero-chip:focus-visible {
 /* ---------- Como funciona ---------- */
 section#como-funciona h3 {
     font-size: 1.6rem;
-    color: var(--cta-primary);
+    color: var(--heading);
 }
 
 /* ---------- Planos ---------- */
@@ -182,7 +186,7 @@ section#como-funciona h3 {
     background-color: var(--cta-primary);
     background-image:
         radial-gradient(circle at 85% 0%, #22d3ee55, transparent 55%),
-        linear-gradient(160deg, #5560d1, var(--cta-primary) 60%);
+        linear-gradient(160deg, var(--plan-essential-from, #5560d1), var(--cta-primary) 60%);
 }
 
 .plan-cards .plan-pro {
@@ -220,4 +224,41 @@ footer {
     main {
         padding: 0 1rem;
     }
+}
+
+/* ---------- Tema escuro (ativado pelo botão) ---------- */
+/* título do hero claro, para o destaque em gradiente ciano continuar se destacando */
+html.dark .hero .hero-title {
+    color: var(--title-text);
+}
+
+/* Planos no escuro: cores chapadas e uma identidade por plano
+   Grátis = neutro (ardósia) · Essencial = verde-azulado da marca · Pro = navy com detalhe dourado */
+html.dark .plan-cards .plan-free {
+    background: #1e293b;
+    border: 1px solid #334155;
+}
+
+html.dark .plan-cards .plan-essential {
+    background: #0e7490;
+    background-image: none;
+}
+
+html.dark .plan-cards .plan-pro {
+    background: #172554;
+    background-image: none;
+    border: 1px solid color-mix(in srgb, var(--accent-2) 55%, transparent);
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background-color: #1699ad;
+}
+
+/* Secundária dourada: usada com moderação, só em detalhes */
+html.dark .menu-options a:hover {
+    color: var(--accent-2-soft);
+}
+
+html.dark footer {
+    border-top: 1px solid color-mix(in srgb, var(--accent-2) 35%, transparent);
 }

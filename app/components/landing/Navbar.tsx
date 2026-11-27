@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const menuLinks = [
   { href: "#como-funciona", label: "Como Funciona" },
@@ -35,6 +36,7 @@ export function Navbar() {
               ))}
             </ul>
             <div className="hidden items-center gap-4 lg:flex">
+              <ThemeToggle />
               <Link href="/auth/login" target="_blank" className="login-button">Entrar</Link>
               <div className="hero-cta">
                 <Link href="/auth/registrar" target="_blank">Comece grátis</Link>
@@ -42,22 +44,25 @@ export function Navbar() {
             </div>
 
             {/* celular */}
+            <div className="flex items-center gap-1 lg:hidden">
+            <ThemeToggle />
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
               aria-expanded={open}
               aria-controls="menu-mobile"
               aria-label={open ? "Fechar menu" : "Abrir menu"}
-              className="flex size-11 items-center justify-center rounded-lg text-(--cta-primary) lg:hidden"
+              className="flex size-11 items-center justify-center rounded-lg text-(--heading) lg:hidden"
             >
               {open ? <X className="size-7" /> : <Menu className="size-7" />}
             </button>
+            </div>
         </div>
 
         {open && (
           <div
             id="menu-mobile"
-            className="absolute inset-x-4 top-full rounded-2xl bg-white p-6 shadow-xl shadow-indigo-900/15 lg:hidden"
+            className="absolute inset-x-4 top-full rounded-2xl bg-(--surface) p-6 shadow-xl shadow-indigo-900/15 lg:hidden"
           >
             <ul className="menu-options flex flex-col gap-4">
               {menuLinks.map((link) => (

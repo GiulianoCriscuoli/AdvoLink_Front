@@ -39,7 +39,7 @@ export default function Contact() {
           <h2 id="contato-title" className="section-title text-balance">
             Ficou com alguma dúvida?
           </h2>
-          <p className="mt-4 text-lg text-balance text-slate-700">
+          <p className="mt-4 text-lg text-balance text-(--body-text)">
             Mande sua mensagem e fale com a gente direto pelo WhatsApp.
           </p>
         </Reveal>
